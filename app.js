@@ -12,6 +12,8 @@ app.post('/api/snacks', postSnack)
 
 app.get('/api/drinks', getDrinks)
 
+app.post('/api/drinks', postDrink)
+
 
 app.all('/*', (req, res) => {
     res.status(404).send({msg : 'Route not found'})
