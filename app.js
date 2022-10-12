@@ -8,6 +8,8 @@ app.use(express.json())
 app.get('/api/snacks', getSnacks);
 app.get('/api/drinks/:drink_id', getDrinkById)
 
+app.get('/api/snacks', postSnack)
+
 
 app.use((err, req, res, next) => {
     if (err.status && err.msg){
