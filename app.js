@@ -1,6 +1,6 @@
 const express = require('express');
-const {getSnacks, postSnack} = require('./controllers/snacksController');
-const getDrinkById = require('./controllers/drinksController')
+const {getSnacks, postSingleSnack} = require('./controllers/snacksController');
+const getSingleDrink = require('./controllers/drinksController')
 
 const app = express();
 app.use(express.json())
@@ -23,7 +23,7 @@ app.use((err, req, res, next) => {
 
 app.use((err, req, res, next) => {
     if (err.code === '22P02'){
-        res.status(400).send({msg: 'SQL says no'})
+        res.status(400).send({msg: 'Bad Request stop it'})
     } else {
         next(err)
     }
