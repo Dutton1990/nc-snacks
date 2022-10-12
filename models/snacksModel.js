@@ -1,9 +1,23 @@
-const pool = require('../db/index');
+const db = require('../db/index');
 
 function fetchSnacks() {
-  return pool.query('SELECT * FROM snacks').then(({ rows: snacks }) => {
+  return db.query('SELECT * FROM snacks').then(({ rows: snacks }) => {
     return snacks;
   });
 }
 
-module.exports = fetchSnacks;
+function insertSnack(newSnack) {
+  const { snack_name, snack_description } = newSnack;
+
+  return db
+    .query(
+      `INSERT INTO snacks (snack_name, snack_description)
+  VALUES ($1, $2) RETURNING *;`,
+      [snack_name, snack_description]
+    )
+    .then(({ rows: snack }) => {
+      return snack[0]
+    });
+}
+
+module.exports = { fetchSnacks, insertSnack };
