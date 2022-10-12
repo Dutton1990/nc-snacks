@@ -28,7 +28,8 @@ app.use((err, req, res, next) => {
 })
 
 app.use((err, req, res, next) => {
-    if (err.code === '22P02' || err.code === '23505'){
+    const sqlErrorCodes = ['22P02', '23505', '23503']
+    if (sqlErrorCodes.includes(err.code)){
         res.status(400).send({msg: 'SQL says no'})
     } else {
         next(err)
