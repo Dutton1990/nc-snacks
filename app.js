@@ -8,8 +8,9 @@ app.use(express.json())
 app.get('/api/snacks', getSnacks);
 app.get('/api/drinks/:drink_id', getDrinkById)
 
-
 app.delete('/api/snacks', deleteSnack)
+
+app.post('/api/drinks', postDrink)
 
 app.get('/api/snacks', postSnack)
 
