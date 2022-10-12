@@ -14,6 +14,8 @@ app.post('/api/drinks', postDrink)
 
 app.get('/api/snacks', postSnack)
 
+app.patch('/api/snacks', patchSnack)
+
 
 app.use((err, req, res, next) => {
     if (err.status && err.msg){
