@@ -1,5 +1,5 @@
 const express = require('express');
-const {getSnacks, postSnack, deleteSnack} = require('./controllers/snacksController');
+const {getSnacks} = require('./controllers/snacksController');
 const getDrinkById = require('./controllers/drinksController')
 
 const app = express();
@@ -13,6 +13,8 @@ app.delete('/api/snacks', deleteSnack)
 app.post('/api/drinks', postDrink)
 
 app.get('/api/snacks', postSnack)
+
+app.patch('/api/snacks', patchSnack)
 
 
 app.use((err, req, res, next) => {
