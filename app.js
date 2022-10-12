@@ -15,7 +15,7 @@ app.post('/api/drinks', postDrink)
 app.get('/api/snacks', postSnack)
 
 app.delete('/api/drink', delDrink)
-app.patch('/api/snacks', updateSnack)
+app.patch('/api/snacks', patchSnack)
 
 
 app.use((err, req, res, next) => {
