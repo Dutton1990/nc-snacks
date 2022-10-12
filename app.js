@@ -1,6 +1,6 @@
 const express = require('express');
-const {getSnacks, postSingleSnack} = require('./controllers/snacksController');
-const getSingleDrink = require('./controllers/drinksController')
+const {getSnacks, postSnack} = require('./controllers/snacksController');
+const getDrinkById = require('./controllers/drinksController')
 
 const app = express();
 app.use(express.json())
@@ -13,6 +13,15 @@ app.post('/api/snacks', postSnack)
 app.get('/api/drinks', getDrinks)
 
 
+app.all('/*', (req, res) => {
+    res.status(404).send({msg : 'Route not found'})
+})
+
+
+
+
+
+
 app.use((err, req, res, next) => {
     if (err.status && err.msg){
         res.status(err.status).send({msg: err.msg})
@@ -23,7 +32,7 @@ app.use((err, req, res, next) => {
 
 app.use((err, req, res, next) => {
     if (err.code === '22P02'){
-        res.status(400).send({msg: 'Bad Request stop it'})
+        res.status(400).send({msg: 'SQL says no'})
     } else {
         next(err)
     }
