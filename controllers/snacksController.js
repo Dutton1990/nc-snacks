@@ -1,4 +1,6 @@
+
 const {fetchSnacks, insertSnack} = require('../models/snacksModel');
+
 
 function getSnacks(request, response) {
   fetchSnacks().then((snacks) => {

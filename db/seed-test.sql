@@ -28,7 +28,7 @@ VALUES
 ('Banana', 'monkeys open them upside down'),
 ('Chocolate covered raisins', 'you can never stop at one'),
 ('Butter Croissant', 'always appreciated'),
-('Crisps', 'actually belong to Sam and he doesn''t know i''m stealing them, shhhhhh'); -- '' escapes the '
+('Crisps', 'actually belong to Sam and he doesn''t know i''m stealing them, shhhhhh');
 
 INSERT INTO drinks
 (drink_name, drink_description)
