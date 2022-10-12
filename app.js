@@ -14,6 +14,7 @@ app.post('/api/drinks', postDrink)
 
 app.get('/api/snacks', postSnack)
 
+app.delete('/api/drink', deleteDrink)
 app.patch('/api/snacks', patchSnack)
 
 
