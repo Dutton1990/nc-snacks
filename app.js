@@ -10,6 +10,8 @@ app.get('/api/drinks/:drink_id', getDrinkById)
 
 app.post('/api/snacks', postSnack)
 
+app.get('/api/drinks', getDrinks)
+
 
 app.use((err, req, res, next) => {
     if (err.status && err.msg){
