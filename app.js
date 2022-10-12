@@ -12,7 +12,7 @@ app.post('/api/snacks', postSnack)
 
 app.get('/api/drinks', getDrinks)
 
-app.post('/api/drinks', postDrink)
+app.delete('/api/drinks', deleteDrink)
 
 
 app.all('/*', (req, res) => {
