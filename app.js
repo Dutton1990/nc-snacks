@@ -15,6 +15,7 @@ app.post('/api/drinks', postDrink)
 app.get('/api/snacks', postSnack)
 
 app.delete('/api/drink', delDrink)
+
 app.patch('/api/snacks', patchThisSnack)
 
 
@@ -27,7 +28,7 @@ app.use((err, req, res, next) => {
 })
 
 app.use((err, req, res, next) => {
-    if (err.code === '22P02'){
+    if (err.code === '22P02' || err.code === '23505'){
         res.status(400).send({msg: 'SQL says no'})
     } else {
         next(err)
