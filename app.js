@@ -18,6 +18,8 @@ app.delete('/api/drink', delDrink)
 
 app.patch('/api/snacks', patchThisSnack)
 
+app.get('/api', getApi)
+
 
 app.use((err, req, res, next) => {
     if (err.status && err.msg){
